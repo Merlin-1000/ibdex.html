@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shadow Market</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Share Tech Mono', monospace;
+      background-color: #0d0d0d;
+      color: #00ffcc;
+      overflow-x: hidden;
+    }
+
+    header {
+      background: #111;
+      padding: 20px;
+      text-align: center;
+      border-bottom: 2px solid #00ffcc;
+    }
+
+    header h1 {
+      font-size: 2.5em;
+      animation: flicker 2s infinite alternate;
+    }
+
+    @keyframes flicker {
+      0% { opacity: 1; }
+      50% { opacity: 0.8; }
+      100% { opacity: 1; }
+    }
+
+    .container {
+      padding: 40px;
+      max-width: 800px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .glow-box {
+      border: 1px solid #00ffcc;
+      padding: 30px;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.02);
+      box-shadow: 0 0 15px #00ffcc44;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .glow-box:hover {
+      transform: scale(1.02);
+      box-shadow: 0 0 25px #00ffccaa;
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 15px 30px;
+      background-color: #00ffcc;
+      color: #000;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 5px;
+      transition: 0.3s;
+    }
+
+    .button:hover {
+      background-color: #00bfa6;
+    }
+
+    footer {
+      margin-top: 60px;
+      text-align: center;
+      color: #666;
+      font-size: 0.8em;
+    }
+
+    .terminal {
+      background: #111;
+      padding: 15px;
+      margin-top: 30px;
+      font-size: 1em;
+      border-radius: 5px;
+      color: #00ffcc;
+      text-align: left;
+      box-shadow: 0 0 10px #00ffcc44;
+      max-height: 200px;
+      overflow-y: auto;
+      white-space: pre-wrap;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>SHADOW MARKET</h1>
+  </header>
+
+  <div class="container">
+    <div class="glow-box">
+      <h2>Dein geheimer Zugang zum Untergrund</h2>
+      <p>Highspeed. High-Risks. High-Rewards.</p>
+      <a href="#" class="button">Enter Now</a>
+
+      <div class="terminal" id="terminal">
+        > Lade Shadow-Netzwerk...  
+        <br>> Verbindung aufgebaut.
+        <br>> Benutzer: anonymous  
+        <br>> Zugriff gewährt.
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 Shadow Market – Nur für Bildungszwecke!
+  </footer>
+
+  <script>
+    const terminal = document.getElementById('terminal');
+    const lines = [
+      '> Initiiere Verbindung...',
+      '> Verschlüsselung aktiv.',
+      '> Zugangscode akzeptiert.',
+      '> Willkommen im System, Operator_01.',
+      '> Lade geheime Angebote...',
+      '> Zugriff auf Händlernetzwerk aktiviert.',
+      '> Alle Aktivitäten werden geloggt.'
+    ];
+    let i = 0;
+
+    setInterval(() => {
+      if (i < lines.length) {
+        terminal.innerHTML += <br>${lines[i]};
+        terminal.scrollTop = terminal.scrollHeight;
+        i++;
+      }
+    }, 1800);
+  </script>
+</body>
+</html>
